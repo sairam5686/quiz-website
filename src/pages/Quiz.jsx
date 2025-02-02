@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaRegLightbulb } from "react-icons/fa6";
 import BiologicalTextFormatter from '../utils/formatter';
+import axios from 'axios';
 
-
-
+const fetcher = async ()=>{
+    try {
+        data = await axios.get('https://api.jsonserve.com/Uw5CrX');
+        console.log(data.json());
+            
+    } catch (error) {
+         console.log(error);
+         
+    }
+    
+} 
 
 
 
@@ -16,6 +26,12 @@ const Quiz = () => {
     const [View, setView] = useState(false);
     const [Click, setClick] = useState(false);
     const [Value, setValue] = useState('');
+
+    useEffect(() => {
+      fetcher();
+      
+    }, [])
+    
 
     const handleCheckAnswer = () => {
         setView(true); // Set to true to show the answer section
