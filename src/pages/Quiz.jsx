@@ -1,12 +1,12 @@
 import React from 'react'
 
+// https://api.jsonserve.com/Uw5CrX
 const Quiz = () => {
   return (
-    <div>
+  <></>        
 
-        
-    </div>
+    
   )
 }
 
-export default Quiz
+export default Quiz 
